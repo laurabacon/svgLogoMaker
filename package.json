@@ -1,6 +1,8 @@
 {
-  "devDependencies": {
-    "jest": "^29.7.0"
+  "name": "your-package-name",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.cjs"
   },
   "dependencies": {
     "inquirer": "^9.2.12"
