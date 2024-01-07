@@ -1,0 +1,6 @@
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+          <circle cx="150" cy="100" r="90" fill="#008080" />
+          <text x="150" y="100" text-anchor="middle" alignment-baseline="middle" fill="#ffffff" font-size="20">LBK</text>
+        </svg>
+      

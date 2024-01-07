@@ -2,9 +2,13 @@
   "name": "your-package-name",
   "type": "commonjs",
   "scripts": {
+    "test": "jest",
     "start": "node index.cjs"
   },
   "dependencies": {
     "inquirer": "^9.2.12"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

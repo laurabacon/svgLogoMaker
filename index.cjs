@@ -1,7 +1,6 @@
 const fs = require("fs");
 const { promisify } = require("util");
 const writeFileAsync = promisify(fs.writeFile);
-
 async function writeToFile(fileName, data) {
   try {
     await writeFileAsync(fileName, data);
@@ -15,7 +14,6 @@ async function writeToFile(fileName, data) {
 async function startApp() {
   try {
     const { default: inquirer } = await import("inquirer");
-    
     const answers = await inquirer.prompt([
       /* Pass your questions in here */
       {
