@@ -55,6 +55,7 @@ async function startApp() {
     const text = answers.Text;
     const textColor = answers["Color of text"];
     let svgData;
+    const { Triangle, Circle, Square } = await import("./lib/shapes.js");
 
     switch (shape) {
       case "triangle":
