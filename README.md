@@ -20,6 +20,8 @@ vs code, node.js, inquirer, and jest.
 ## Usage
 
 Upon invoking node, the user will be prompted with several questions including to select a shape, shape color, and text color. The user will also be prompted to enter three characters to be added to this logo. After the user answers all the questions, the logo maker will generate a new file called logo.svg.
+Below is a video demostrating the usage.
+<video src="svg-video.mp4" controls title="Title"></video>
 
 ## Contributing
 
