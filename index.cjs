@@ -1,6 +1,8 @@
 const fs = require("fs");
 const { promisify } = require("util");
 const writeFileAsync = promisify(fs.writeFile);
+
+// Function to write data to a file
 async function writeToFile(fileName, data) {
   try {
     await writeFileAsync(fileName, data);
@@ -11,9 +13,12 @@ async function writeToFile(fileName, data) {
   }
 }
 
+// Function to start the application
 async function startApp() {
   try {
     const { default: inquirer } = await import("inquirer");
+
+    // Prompt the user for input
     const answers = await inquirer.prompt([
       /* Pass your questions in here */
       {
@@ -54,12 +59,15 @@ async function startApp() {
     const color = answers["Color of shape"];
     const text = answers.Text;
     const textColor = answers["Color of text"];
-    let svgData;
-    const { Triangle, Circle, Square } = await import("./lib/shapes.js");
 
+    let svgData;
+
+    // Import shape classes
+    const { Triangle, Circle, Square } = require("./lib/shapes.js");
+
+    // Generate SVG based on user input
     switch (shape) {
       case "triangle":
-        const { Triangle } = await import("./lib/shapes.js");
         const triangle = new Triangle();
         triangle.setColor(color);
         triangle.setText(text);
@@ -67,7 +75,6 @@ async function startApp() {
         svgData = triangle.render();
         break;
       case "circle":
-        const { Circle } = await import("./lib/shapes.js");
         const circle = new Circle();
         circle.setColor(color);
         circle.setText(text);
@@ -75,7 +82,6 @@ async function startApp() {
         svgData = circle.render();
         break;
       case "square":
-        const { Square } = await import("./lib/shapes.js");
         const square = new Square();
         square.setColor(color);
         square.setText(text);
@@ -87,6 +93,7 @@ async function startApp() {
         return;
     }
 
+    // Write SVG data to file
     await writeToFile("logo.svg", svgData);
   } catch (error) {
     console.error("There was an error");
